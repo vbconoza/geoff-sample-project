@@ -32,19 +32,19 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  "GET     /login"  : "AuthController.new",
-  "POST    /login"  : "AuthController.create",
-  "GET     /logout" : "AuthController.destroy",
+  "GET     /login"  : "AuthController.new",               //-- serves the login page
+  "POST    /login"  : "AuthController.create",            //-- validates credentials, assigns session
+  "GET     /logout" : "AuthController.destroy",           //-- destroys session, redirects to login
 
-  "GET  /"         : "UserController.home",
-  "GET  /register" : "UserController.new",
-  "POST /register" : "UserController.create",
+  "GET  /"         : "UserController.home",               //-- home page 
+  "GET  /register" : "UserController.new",                //-- serves the register form
+  "POST /register" : "UserController.create",             //-- adds user
 
-  "GET  /list"               : "ListController.index",
-  "GET  /list/:id"           : "ListController.show",
-  "GET  /form"               : "ListController.new",
-  "POST /form"               : "ListController.create",
-  "GET  /download"           : "ListController.download",
+  "GET  /list"               : "ListController.index",    //--lists all forms submitted, for ADMIN only
+  "GET  /list/:id"           : "ListController.show",     //-- lists single form submitted
+  "GET  /form"               : "ListController.new",      //-- serves the form 
+  "POST /form"               : "ListController.create",   //-- adds to list 
+  "GET  /download"           : "ListController.download", //-- download pdf, if id is included, pdf for single form only
 
   /***************************************************************************
   *                                                                          *
